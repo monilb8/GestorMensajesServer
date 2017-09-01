@@ -1,11 +1,11 @@
-﻿using formulario.Models;
+﻿using GestorMensajesServer.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace formulario.Repository
+namespace GestorMensajesServer.Repository
 {
     public class EntradaRepository : IEntradaRepository
     {

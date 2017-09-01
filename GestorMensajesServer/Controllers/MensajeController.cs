@@ -8,12 +8,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using formulario;
-using formulario.Models;
-using formulario.Servicios;
+using GestorMensajesServer;
+using GestorMensajesServer.Models;
+using GestorMensajesServer.Servicios;
 using System.Web.Http.Cors;
 
-namespace formulario.Controllers
+namespace GestorMensajesServer.Controllers
 {
     [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
 

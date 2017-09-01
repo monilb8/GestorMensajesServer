@@ -1,10 +1,10 @@
-﻿using formulario.Repository;
+﻿using GestorMensajesServer.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace formulario.Servicios
+namespace GestorMensajesServer.Service
 {
     public class EntradaService: IEntradaService
     {

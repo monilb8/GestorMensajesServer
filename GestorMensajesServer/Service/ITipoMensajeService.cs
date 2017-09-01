@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestorMensajesServer.Repository
+namespace GestorMensajesServer.Service
 {
-    public interface ITipoMensajeRepository
+    public interface ITipoMensajeService
     {
         TipoMensaje Create(TipoMensaje TipoMensaje);
         TipoMensaje Get(long id);

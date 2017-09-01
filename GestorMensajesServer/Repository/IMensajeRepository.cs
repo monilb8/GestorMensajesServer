@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace formulario.Repository
+namespace GestorMensajesServer.Repository
 {
     public interface IEntradaRepository
     {

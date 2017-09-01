@@ -278,6 +278,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mensaje.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -288,11 +289,12 @@
     <Compile Include="Repository\MensajeRepository.cs" />
     <Compile Include="Repository\TipoMensajeRepository.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
-    <Compile Include="Servicios\IMensajeService.cs" />
-    <Compile Include="Servicios\ITipoMensajeService.cs" />
-    <Compile Include="Servicios\MensajeService.cs" />
-    <Compile Include="Servicios\TipoMensajeService.cs" />
+    <Compile Include="Service\IMensajeService.cs" />
+    <Compile Include="Service\ITipoMensajeService.cs" />
+    <Compile Include="Service\MensajeService.cs" />
+    <Compile Include="Service\TipoMensajeService.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="TipoMensaje.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

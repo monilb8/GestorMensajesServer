@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace GestorMensajesServer.Models
 {
@@ -27,9 +28,9 @@ namespace GestorMensajesServer.Models
         {
         }
 
-        public DbSet<Pelicula> Pelicula { get; set; }
+        public DbSet<Mensaje> Mensaje { get; set; }
 
-        public DbSet<Entrada> Entrada { get; set; }
+        public DbSet<TipoMensaje> TipoMensaje { get; set; }
 
         public static ApplicationDbContext Create()
         {

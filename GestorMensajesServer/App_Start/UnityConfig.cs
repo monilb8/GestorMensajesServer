@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using GestorMensajesServer.Models;
 
-namespace formulario
+namespace GestorMensajesServer
 {
     public static class UnityConfig
     {

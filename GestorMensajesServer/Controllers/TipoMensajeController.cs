@@ -8,60 +8,60 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using formulario;
-using formulario.Models;
-using formulario.Servicios;
+using GestorMensajesServer;
+using GestorMensajesServer.Models;
+using GestorMensajesServer.Service;
 using System.Web.Http.Cors;
 
-namespace formulario.Controllers
+namespace GestorMensajesServer.Controllers
 {
     [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
 
-    public class PeliculaController : ApiController
+    public class TipoMensajeController : ApiController
     {
-        private IPeliculaService peliculaService;
+        private ITipoMensajeService TipoMensajeService;
 
-        public PeliculaController(IPeliculaService _peliculaService)
+        public TipoMensajeController(ITipoMensajeService _TipoMensajeService)
         {
-            this.peliculaService = _peliculaService;
+            this.TipoMensajeService = _TipoMensajeService;
         }
 
-        // GET: api/Pelicula
-        public IQueryable<Pelicula> GetPelicula()
+        // GET: api/TipoMensaje
+        public IQueryable<TipoMensaje> GetTipoMensaje()
         {
-            return peliculaService.Get();
+            return TipoMensajeService.Get();
         }
 
-        // GET: api/Pelicula/5
-        [ResponseType(typeof(Pelicula))]
-        public IHttpActionResult GetPelicula(long id)
+        // GET: api/TipoMensaje/5
+        [ResponseType(typeof(TipoMensaje))]
+        public IHttpActionResult GetTipoMensaje(long id)
         {
-            Pelicula pelicula = peliculaService.Get(id);
-            if (pelicula == null)
+            TipoMensaje TipoMensaje = TipoMensajeService.Get(id);
+            if (TipoMensaje == null)
             {
                 return NotFound();
             }
 
-            return Ok(pelicula);
+            return Ok(TipoMensaje);
         }
 
-        // PUT: api/Pelicula/5
+        // PUT: api/TipoMensaje/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutPelicula(long id, Pelicula pelicula)
+        public IHttpActionResult PutTipoMensaje(long id, TipoMensaje TipoMensaje)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != pelicula.Id)
+            if (id != TipoMensaje.Id)
             {
                 return BadRequest();
             }
 
             try
             {
-                peliculaService.Put(pelicula);
+                TipoMensajeService.Put(TipoMensaje);
             }
             catch (NoEncontradoException)
             {
@@ -71,35 +71,35 @@ namespace formulario.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Pelicula
-        [ResponseType(typeof(Pelicula))]
-        public IHttpActionResult PostUsuario(Pelicula pelicula)
+        // POST: api/TipoMensaje
+        [ResponseType(typeof(TipoMensaje))]
+        public IHttpActionResult PostUsuario(TipoMensaje TipoMensaje)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            pelicula = peliculaService.Create(pelicula);
+            TipoMensaje = TipoMensajeService.Create(TipoMensaje);
 
-            return CreatedAtRoute("DefaultApi", new { id = pelicula.Id }, pelicula);
+            return CreatedAtRoute("DefaultApi", new { id = TipoMensaje.Id }, TipoMensaje);
         }
 
-        // DELETE: api/Pelicula/5
-        [ResponseType(typeof(Pelicula))]
-        public IHttpActionResult DeletePelicula(long id)
+        // DELETE: api/TipoMensaje/5
+        [ResponseType(typeof(TipoMensaje))]
+        public IHttpActionResult DeleteTipoMensaje(long id)
         {
-            Pelicula pelicula;
+            TipoMensaje TipoMensaje;
             try
             {
-                pelicula = peliculaService.Delete(id);
+                TipoMensaje = TipoMensajeService.Delete(id);
             }
             catch (NoEncontradoException)
             {
                 return NotFound();
             }
 
-            return Ok(pelicula);
+            return Ok(TipoMensaje);
         }
     }
 }
