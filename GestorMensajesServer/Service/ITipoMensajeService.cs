@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestorMensajesServer.Service
+namespace GestorMensajesServer.Servicios
 {
-    public interface ITipoMensajeService
+    public interface IPeliculaService
     {
-        TipoMensaje Create(TipoMensaje TipoMensaje);
-        TipoMensaje Get(long id);
-        IQueryable<TipoMensaje> Get();
-        void Put(TipoMensaje TipoMensaje);
-        TipoMensaje Delete(long id);
+        Pelicula Create(Pelicula pelicula);
+        Pelicula Get(long id);
+        IQueryable<Pelicula> Get();
+        void Put(Pelicula pelicula);
+        Pelicula Delete(long id);
     }
 }

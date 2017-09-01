@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestorMensajesServer.Service
+namespace GestorMensajesServer.Servicios
 {
-    public interface IEntradaService
+    public interface IMensajeService
     {
-        Entrada Create(Entrada entrada);
-        Entrada Get(long id);
-        IQueryable<Entrada> Get();
-        void Put(Entrada entrada);
-        Entrada Delete(long id);
+        Mensaje Create(Mensaje Mensaje);
+        Mensaje Get(long id);
+        IQueryable<Mensaje> Get();
+        void Put(Mensaje Mensaje);
+        Mensaje Delete(long id);
     }
 }

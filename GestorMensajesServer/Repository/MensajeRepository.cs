@@ -7,45 +7,45 @@ using System.Web;
 
 namespace GestorMensajesServer.Repository
 {
-    public class EntradaRepository : IEntradaRepository
+    public class MensajeRepository : IMensajeRepository
     {
-        public Entrada Create(Entrada entrada)
+        public Mensaje Create(Mensaje Mensaje)
         {
-            return ApplicationDbContext.applicationDbContext.Entrada.Add(entrada);
+            return ApplicationDbContext.applicationDbContext.Mensaje.Add(Mensaje);
         }
 
-        public Entrada Get(long id)
+        public Mensaje Get(long id)
         {
-            return ApplicationDbContext.applicationDbContext.Entrada.Find(id);
+            return ApplicationDbContext.applicationDbContext.Mensaje.Find(id);
         }
 
-        public IQueryable<Entrada> Get()
+        public IQueryable<Mensaje> Get()
         {
-            IList<Entrada> lista = new List<Entrada>(ApplicationDbContext.applicationDbContext.Entrada);
+            IList<Mensaje> lista = new List<Mensaje>(ApplicationDbContext.applicationDbContext.Mensaje);
 
             return lista.AsQueryable();
         }
 
 
-        public void Put(Entrada entrada)
+        public void Put(Mensaje Mensaje)
         {
-            if (ApplicationDbContext.applicationDbContext.Entrada.Count(e => e.Id == entrada.Id) == 0)
+            if (ApplicationDbContext.applicationDbContext.Mensaje.Count(e => e.Id == Mensaje.Id) == 0)
             {
                 throw new NoEncontradoException("No he encontrado la entidad");
             }
-            ApplicationDbContext.applicationDbContext.Entry(entrada).State = EntityState.Modified;
+            ApplicationDbContext.applicationDbContext.Entry(Mensaje).State = EntityState.Modified;
         }
 
-        public Entrada Delete(long id)
+        public Mensaje Delete(long id)
         {
-            Entrada entrada = ApplicationDbContext.applicationDbContext.Entrada.Find(id);
-            if (entrada == null)
+            Mensaje Mensaje = ApplicationDbContext.applicationDbContext.Mensaje.Find(id);
+            if (Mensaje == null)
             {
                 throw new NoEncontradoException("No he encontrado la entidad");
             }
 
-            ApplicationDbContext.applicationDbContext.Entrada.Remove(entrada);
-            return entrada;
+            ApplicationDbContext.applicationDbContext.Mensaje.Remove(Mensaje);
+            return Mensaje;
         }
     }
 }

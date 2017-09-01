@@ -17,51 +17,51 @@ namespace GestorMensajesServer.Controllers
 {
     [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
 
-    public class PeliculaController : ApiController
+    public class MensajeController : ApiController
     {
-        private IPeliculaService peliculaService;
+        private IMensajeService mensajeService;
 
-        public PeliculaController(IPeliculaService _peliculaService)
+        public MensajeController(IMensajeService _mensajeService)
         {
-            this.peliculaService = _peliculaService;
+            this.mensajeService = _mensajeService;
         }
 
-        // GET: api/Pelicula
-        public IQueryable<Pelicula> GetPelicula()
+        // GET: api/Mensaje
+        public IQueryable<Mensaje> GetMensaje()
         {
-            return peliculaService.Get();
+            return mensajeService.Get();
         }
 
-        // GET: api/Pelicula/5
-        [ResponseType(typeof(Pelicula))]
-        public IHttpActionResult GetPelicula(long id)
+        // GET: api/Mensaje/5
+        [ResponseType(typeof(Mensaje))]
+        public IHttpActionResult GetMensaje(long id)
         {
-            Pelicula pelicula = peliculaService.Get(id);
-            if (pelicula == null)
+            Mensaje mensaje = mensajeService.Get(id);
+            if (mensaje == null)
             {
                 return NotFound();
             }
 
-            return Ok(pelicula);
+            return Ok(mensaje);
         }
 
-        // PUT: api/Pelicula/5
+        // PUT: api/Mensaje/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutPelicula(long id, Pelicula pelicula)
+        public IHttpActionResult PutMensaje(long id, Mensaje mensaje)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != pelicula.Id)
+            if (id != mensaje.Id)
             {
                 return BadRequest();
             }
 
             try
             {
-                peliculaService.Put(pelicula);
+                mensajeService.Put(mensaje);
             }
             catch (NoEncontradoException)
             {
@@ -71,28 +71,28 @@ namespace GestorMensajesServer.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Pelicula
-        [ResponseType(typeof(Pelicula))]
-        public IHttpActionResult PostUsuario(Pelicula pelicula)
+        // POST: api/Mensaje
+        [ResponseType(typeof(Mensaje))]
+        public IHttpActionResult PostMensaje(Mensaje mensaje)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            pelicula = peliculaService.Create(pelicula);
+            mensaje = mensajeService.Create(mensaje);
 
-            return CreatedAtRoute("DefaultApi", new { id = pelicula.Id }, pelicula);
+            return CreatedAtRoute("DefaultApi", new { id = mensaje.Id }, mensaje);
         }
 
-        // DELETE: api/Pelicula/5
-        [ResponseType(typeof(Pelicula))]
-        public IHttpActionResult DeletePelicula(long id)
+        // DELETE: api/Mensaje/5
+        [ResponseType(typeof(Mensaje))]
+        public IHttpActionResult DeleteMensaje(long id)
         {
-            Pelicula pelicula;
+            Mensaje pelicula;
             try
             {
-                pelicula = peliculaService.Delete(id);
+                pelicula = mensajeService.Delete(id);
             }
             catch (NoEncontradoException)
             {

@@ -4,39 +4,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace GestorMensajesServer.Service
+namespace GestorMensajesServer.Servicios
 {
-    public class EntradaService: IEntradaService
+    public class MensajeService: IMensajeService
     {
-        private IEntradaRepository entradaRepository;
-        public EntradaService(IEntradaRepository _entradaRepository)
+        private IMensajeRepository mensajeReposistory;
+        public MensajeService(IMensajeRepository _MensajeRepository)
         {
-            this.entradaRepository = _entradaRepository;
+            this.mensajeReposistory = _MensajeRepository;
         }
 
-        public Entrada Get(long id)
+        public Mensaje Get(long id)
         {
-            return entradaRepository.Get(id);
+            return mensajeReposistory.Get(id);
         }
 
-        public IQueryable<Entrada> Get()
+        public IQueryable<Mensaje> Get()
         {
-            return entradaRepository.Get();
+            return mensajeReposistory.Get();
         }
 
-        public Entrada Create(Entrada entrada)
+        public Mensaje Create(Mensaje Mensaje)
         {
-            return entradaRepository.Create(entrada);
+            return mensajeReposistory.Create(Mensaje);
         }
 
-        public void Put(Entrada entrada)
+        public void Put(Mensaje Mensaje)
         {
-            entradaRepository.Put(entrada);
+            mensajeReposistory.Put(Mensaje);
         }
 
-        public Entrada Delete(long id)
+        public Mensaje Delete(long id)
         {
-            return entradaRepository.Delete(id);
+            return mensajeReposistory.Delete(id);
         }
     }
 }

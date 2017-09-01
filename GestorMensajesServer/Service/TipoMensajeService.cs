@@ -4,39 +4,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace GestorMensajesServer.Service
+namespace GestorMensajesServer.Servicios
 {
-    public class TipoMensajeService : ITipoMensajeService
+    public class PeliculaService : IPeliculaService
     {
-        private ITipoMensajeRepository TipoMensajeRepository;
-        public TipoMensajeService(ITipoMensajeRepository _TipoMensajeRepository)
+        private IPeliculaRepository peliculaRepository;
+        public PeliculaService(IPeliculaRepository _peliculaRepository)
         {
-            this.TipoMensajeRepository = _TipoMensajeRepository;
+            this.peliculaRepository = _peliculaRepository;
         }
 
-        public TipoMensaje Get(long id)
+        public Pelicula Get(long id)
         {
-            return TipoMensajeRepository.Get(id);
+            return peliculaRepository.Get(id);
         }
 
-        public IQueryable<TipoMensaje> Get()
+        public IQueryable<Pelicula> Get()
         {
-            return TipoMensajeRepository.Get();
+            return peliculaRepository.Get();
         }
 
-        public TipoMensaje Create(TipoMensaje TipoMensaje)
+        public Pelicula Create(Pelicula pelicula)
         {
-            return TipoMensajeRepository.Create(TipoMensaje);
+            return peliculaRepository.Create(pelicula);
         }
 
-        public void Put(TipoMensaje TipoMensaje)
+        public void Put(Pelicula pelicula)
         {
-            TipoMensajeRepository.Put(TipoMensaje);
+            peliculaRepository.Put(pelicula);
         }
 
-        public TipoMensaje Delete(long id)
+        public Pelicula Delete(long id)
         {
-            return TipoMensajeRepository.Delete(id);
+            return peliculaRepository.Delete(id);
         }
     }
 }

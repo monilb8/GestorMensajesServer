@@ -282,6 +282,7 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="NoEncontradoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Repository\IMensajeRepository.cs" />
@@ -294,7 +295,6 @@
     <Compile Include="Service\MensajeService.cs" />
     <Compile Include="Service\TipoMensajeService.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="TipoMensaje.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

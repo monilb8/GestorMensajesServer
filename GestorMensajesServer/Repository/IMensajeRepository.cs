@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace GestorMensajesServer.Repository
 {
-    public interface IEntradaRepository
+    public interface IMensajeRepository
     {
-        Entrada Create(Entrada entrada);
-        Entrada Get(long id);
-        IQueryable<Entrada> Get();
-        void Put(Entrada entrada);
-        Entrada Delete(long id);
+        Mensaje Create(Mensaje Mensaje);
+        Mensaje Get(long id);
+        IQueryable<Mensaje> Get();
+        void Put(Mensaje mensaje);
+        Mensaje Delete(long id);
     }
 }
