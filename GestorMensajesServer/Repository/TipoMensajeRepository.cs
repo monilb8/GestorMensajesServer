@@ -7,45 +7,45 @@ using System.Web;
 
 namespace GestorMensajesServer.Repository
 {
-    public class PeliculaRepository : IPeliculaRepository
+    public class TipoMensajeRepository : ITipoMensajeRepository
     {
-        public Pelicula Create(Pelicula pelicula)
+        public TipoMensaje Create(TipoMensaje TipoMensaje)
         {
-            return ApplicationDbContext.applicationDbContext.Pelicula.Add(pelicula);
+            return ApplicationDbContext.applicationDbContext.TipoMensaje.Add(TipoMensaje);
         }
 
-        public Pelicula Get(long id)
+        public TipoMensaje Get(long id)
         {
-            return ApplicationDbContext.applicationDbContext.Pelicula.Find(id);
+            return ApplicationDbContext.applicationDbContext.TipoMensaje.Find(id);
         }
 
-        public IQueryable<Pelicula> Get()
+        public IQueryable<TipoMensaje> Get()
         {
-            IList<Pelicula> lista = new List<Pelicula>(ApplicationDbContext.applicationDbContext.Pelicula);
+            IList<TipoMensaje> lista = new List<TipoMensaje>(ApplicationDbContext.applicationDbContext.TipoMensaje);
 
             return lista.AsQueryable();
         }
 
 
-        public void Put(Pelicula pelicula)
+        public void Put(TipoMensaje TipoMensaje)
         {
-            if (ApplicationDbContext.applicationDbContext.Pelicula.Count(e => e.Id == pelicula.Id) == 0)
+            if (ApplicationDbContext.applicationDbContext.TipoMensaje.Count(e => e.Id == TipoMensaje.Id) == 0)
             {
                 throw new NoEncontradoException("No he encontrado la entidad");
             }
-            ApplicationDbContext.applicationDbContext.Entry(pelicula).State = EntityState.Modified;
+            ApplicationDbContext.applicationDbContext.Entry(TipoMensaje).State = EntityState.Modified;
         }
 
-        public Pelicula Delete(long id)
+        public TipoMensaje Delete(long id)
         {
-            Pelicula pelicula = ApplicationDbContext.applicationDbContext.Pelicula.Find(id);
-            if (pelicula == null)
+            TipoMensaje TipoMensaje = ApplicationDbContext.applicationDbContext.TipoMensaje.Find(id);
+            if (TipoMensaje == null)
             {
                 throw new NoEncontradoException("No he encontrado la entidad");
             }
 
-            ApplicationDbContext.applicationDbContext.Pelicula.Remove(pelicula);
-            return pelicula;
+            ApplicationDbContext.applicationDbContext.TipoMensaje.Remove(TipoMensaje);
+            return TipoMensaje;
         }
     }
 }

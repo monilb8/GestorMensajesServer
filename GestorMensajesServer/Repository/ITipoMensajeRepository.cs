@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace GestorMensajesServer.Repository
 {
-    public interface IPeliculaRepository
+    public interface ITipoMensajeRepository
     {
-        Pelicula Create(Pelicula usuario);
-        Pelicula Get(long id);
-        IQueryable<Pelicula> Get();
-        void Put(Pelicula usuario);
-        Pelicula Delete(long id);
+        TipoMensaje Create(TipoMensaje usuario);
+        TipoMensaje Get(long id);
+        IQueryable<TipoMensaje> Get();
+        void Put(TipoMensaje usuario);
+        TipoMensaje Delete(long id);
     }
 }

@@ -295,6 +295,7 @@
     <Compile Include="Service\MensajeService.cs" />
     <Compile Include="Service\TipoMensajeService.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="TipoMensaje.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
