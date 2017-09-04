@@ -17,11 +17,11 @@ namespace GestorMensajesServer.Controllers
 {
     [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
 
-    public class MensajeController : ApiController
+    public class TipoMensajeController : ApiController
     {
         private ITipoMensajeService TipoMensajeService;
 
-        public MensajeController(ITipoMensajeService _TipoMensajeService)
+        public TipoMensajeController(ITipoMensajeService _TipoMensajeService)
         {
             this.TipoMensajeService = _TipoMensajeService;
         }

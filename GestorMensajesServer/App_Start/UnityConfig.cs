@@ -21,15 +21,15 @@ namespace GestorMensajesServer
 
             // e.g. container.RegisterType<ITestService, TestService>();
 
-            container.RegisterType<IPeliculaService, PeliculaService>(
+            container.RegisterType<IMensajeService, MensajeService>(
                 new Interceptor<InterfaceInterceptor>(),
                 new InterceptionBehavior<DBInterceptor>());
-            container.RegisterType<IPeliculaRepository, PeliculaRepository>();
+            container.RegisterType<IMensajeRepository, MensajeRepository>();
 
-            container.RegisterType<IEntradaService, EntradaService>(
+            container.RegisterType<ITipoMensajeService, TipoMensajeService>(
                 new Interceptor<InterfaceInterceptor>(),
                 new InterceptionBehavior<DBInterceptor>());
-            container.RegisterType<IEntradaRepository, EntradaRepository>();
+            container.RegisterType<ITipoMensajeRepository, TipoMensajeRepository>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
